@@ -92,7 +92,6 @@ class Download:
                         print(f'Error Downloading Video File May be an issue with avaliable quality at 360')
                         print(f'trying resolution:240 ')
                         urllib.request.urlretrieve(url + f'/DASH_240.mp4', self.destination + "Video.mp4")
-                        print("Can't fetch the video file :(")
                     except:
                         try:
                             print(f'Error Downloading Video File May be an issue with avaliable quality at 240')

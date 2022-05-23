@@ -9,7 +9,7 @@ import shutil
 
 class Download:
 
-    def __init__(self, url, quality=720, output="downloaded", destination=None):
+    def __init__(self, url, quality=144, output="downloaded", destination=None):
         self.output = output
         self.destination = destination
         qualityTypes = [144, 240, 360, 480, 720, 1080]

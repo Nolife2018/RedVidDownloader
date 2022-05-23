@@ -5,7 +5,7 @@ Usage:
 To Install the package:
 
 ```
-pip install RedDownloader
+pip install -e git+https://github.com/Nolife2018/RedVidDownloader@main#egg=RedDownloader
 ```
 
 To Import package just do:

@@ -12,9 +12,9 @@ class Download:
     def __init__(self, url, quality=720, output="downloaded", destination=None):
         self.output = output
         self.destination = destination
-        qualityTypes = [144, 240, 360, 720, 1080]
+        qualityTypes = [144, 240, 360, 480, 720, 1080]
         if quality not in qualityTypes:
-            print("Error: Unkown Quality Type" + f" {quality} choose either 144 , 240 , 360 , 720 , 1080")
+            print("Error: Unkown Quality Type" + f" {quality} choose either 144 , 240 , 360 , 480 , 720 , 1080")
         else:
             self.postLink = requests.get("https://jackhammer.pythonanywhere.com/reddit/media/downloader",
                                          params={'url': url}).text
@@ -85,20 +85,25 @@ class Download:
             except:
                 try:
                     print(f'Error Downloading Video File May be an issue with avaliable quality at 720&1080')
-                    print(f'trying resolution:360 ')
-                    urllib.request.urlretrieve(url + f'/DASH_360.mp4', self.destination + "Video.mp4")
+                    print(f'trying resolution:480 ')
+                    urllib.request.urlretrieve(url + f'/DASH_480.mp4', self.destination + "Video.mp4")
                 except:
                     try:
-                        print(f'Error Downloading Video File May be an issue with avaliable quality at 360')
-                        print(f'trying resolution:240 ')
-                        urllib.request.urlretrieve(url + f'/DASH_240.mp4', self.destination + "Video.mp4")
+                        print(f'Error Downloading Video File May be an issue with avaliable quality at 480')
+                        print(f'trying resolution:360 ')
+                        urllib.request.urlretrieve(url + f'/DASH_360.mp4', self.destination + "Video.mp4")
                     except:
                         try:
-                            print(f'Error Downloading Video File May be an issue with avaliable quality at 240')
-                            print(f'trying resolution:144 ')
-                            urllib.request.urlretrieve(url + f'/DASH_144.mp4', self.destination + "Video.mp4")
+                            print(f'Error Downloading Video File May be an issue with avaliable quality at 360')
+                            print(f'trying resolution:240 ')
+                            urllib.request.urlretrieve(url + f'/DASH_240.mp4', self.destination + "Video.mp4")
                         except:
-                            print("Can't fetch the video file :(")
+                            try:
+                                print(f'Error Downloading Video File May be an issue with avaliable quality at 240')
+                                print(f'trying resolution:144 ')
+                                urllib.request.urlretrieve(url + f'/DASH_144.mp4', self.destination + "Video.mp4")
+                            except:
+                                print("Can't fetch the video file :(")
 
     def fetchAudio(self, url):
         doc = requests.get(url + '/DASH_audio.mp4')

@@ -1,3 +1,7 @@
+This Repo should now be irrelevant.
+
+
+
 A very easy to use library to download videos from reddit with sound without installing external installation of ffmpeg. The library can also be used to download pictures and even picture galleries all just with a reddit post link. With RedDownloader 3 you can access Reddit API methods without having your own bot with classes such as ```DownloadBySubreddit``` more on that below.
 note that this package does only download media from posts with images/video directly uploaded to reddit and not from sources like imgur or youtube / vimeo.
 
